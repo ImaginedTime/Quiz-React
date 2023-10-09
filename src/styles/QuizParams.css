@@ -1,0 +1,70 @@
+.difficulties-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin: 0 auto;
+    width: 40%;
+    max-width: 500px;
+    padding: 0 1rem;
+}
+
+.difficulties-container h2 {
+    font-size: 2rem;
+    color: var(--main-font-color);
+    margin-bottom: 1rem;
+}
+
+.difficulty-button {
+    font-size: 1.3rem;
+    padding: 0.5rem 1rem;
+    margin-top: 1rem;
+    border-radius: 0.5rem;
+    border: 3px solid var(--button-color);
+    background-color: var(--main-background-color);
+    color: var(--main-font-color);
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    text-transform: capitalize;
+}
+
+.selected-difficulty {
+    background-color: var(--button-color) !important;
+    color: #14213d !important;
+}
+
+.nq-header {
+    margin: 2rem auto;
+    margin-top: 4rem;
+    width: 40%;
+    max-width: 500px;
+    padding: 0 1rem;
+}
+
+.nq-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin: 0 auto;
+    width: 40%;
+    max-width: 500px;
+    padding: 0 1rem;
+}
+
+.time-header {
+    margin: 2rem auto;
+    margin-top: 4rem;
+    width: 40%;
+    max-width: 500px;
+    padding: 0 1rem;
+}
+
+.time-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin: 0 auto;
+    width: 40%;
+    max-width: 500px;
+    padding: 0 1rem;
+}
+

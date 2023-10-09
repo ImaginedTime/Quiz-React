@@ -1,0 +1,23 @@
+.App {
+  text-align: center;
+}
+
+:root {
+  --main-background-color: #191919;
+  --main-font-color: #A7A7A7;
+  --button-color: #fca311;
+  --button-selected-color: #e5e5e5;
+  --button-font-color: #14213d;
+  --start-button-hover-color: #e5e5e5;
+  --question-card-color: #202020;
+  --question-card-qandf-color: #313131;
+  --correct-answer-color: #00FF00;
+  --wrong-answer-color: #FF0000;
+  
+  --timer-background-color: #fca311;
+  --timer-low-color: #fc6f11;
+  --timer-lowest-color: #fc4011;
+  --timer-font-color: #191919;
+
+  --score-font-color: #e5e5e5;
+}

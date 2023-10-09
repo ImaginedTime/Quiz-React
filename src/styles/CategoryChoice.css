@@ -1,0 +1,54 @@
+.categories-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    margin: 0 auto;
+    width: 80%;
+    height: 100vh;
+    padding: 0 1rem;
+}
+
+.categories-container h1 {
+    font-size: 2rem;
+    color: var(--main-font-color);
+    margin-bottom: 1rem;
+}
+
+.categories-container .categories {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+}
+
+.categories-container .categories .category-button {
+    font-size: 1.3rem;
+    padding: 0.5rem 1rem;
+    margin-top: 1rem;
+    border-radius: 0.5rem;
+    border: 3px solid var(--button-color);
+    background-color: var(--main-background-color);
+    color: var(--main-font-color);
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+.selected-category {
+    background-color: var(--button-color) !important;
+    color: #14213d !important;
+}
+
+.choose-button {
+    font-size: 1.2rem;
+    padding: 0.5rem 3rem;
+    margin-top: 1rem;
+    border-radius: 0.5rem;
+    border: none;
+    background-color: var(--button-color);
+    color: #14213d;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
