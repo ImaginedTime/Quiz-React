@@ -1,6 +1,7 @@
 import { toast } from "react-toastify";
 
 const createToast = (text) => {
+    toast.dismiss();
     toast.warn(text , {
         position: "bottom-right",
         autoClose: 5000,
