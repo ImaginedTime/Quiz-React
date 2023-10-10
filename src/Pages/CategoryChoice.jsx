@@ -1,8 +1,9 @@
 import React, { useContext, useState } from 'react'
 import '../styles/CategoryChoice.css'
 import { QuizContext } from '../QuizContext';
-
+import { toast } from 'react-toastify';
 import { ToastContainer} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import createToast from '../utils/createToast'
 
 import { Link } from 'react-router-dom'
@@ -42,7 +43,7 @@ export default function CategoryChoice() {
             {
                 selectedCategory !== null ?
                     <Link to='/qparams'><button className='choose-button'> Choose </button></Link> :
-                    <button className='choose-button' onClick={() => createToast('Please Choose A Category!')} > Choose </button>
+                    <button className='choose-button' onClick={() => { console.log("dismissing"); toast.dismiss(); createToast('Please Choose A Category!!')}} > Choose </button>
             }
 
             <ToastContainer />
