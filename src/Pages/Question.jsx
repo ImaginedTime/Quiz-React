@@ -6,7 +6,10 @@ import '../styles/Question.css'
 
 
 import Loader from '../components/Loader';
-import { ToastContainer } from 'react-toastify';
+import createToast from '../utils/createToast'
+
+import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer} from 'react-toastify';
 
 
 import QuestionCard from '../components/QuestionCard';
