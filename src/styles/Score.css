@@ -6,6 +6,10 @@
     width: 100%;
 }
 
+.score-container div {
+    border: 1px solid red;
+}
+
 .score {
     font-size: 1.5rem;
     font-weight: 700;
@@ -15,21 +19,34 @@
 }
 
 .score-card {
-    /* display: flex;
-    flex-direction: column;
-    align-items: center; */
     /* justify-content: center; */
-    background-color: var(--question-card-color);
+    /* background-color: var(--question-card-color); */
     border-radius: 0.5rem;
     padding: 1rem;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
     /* width: 100%; */
     /* max-width: 500px; */
 }
 
 .score-card-item {
+    background-color: var(--question-card-color);
+    width: 100%;
     /* display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
     width: 100%; */
+}
+
+.correct-option {
+    background-color: var(--correct-option-color) !important;
+}
+
+.wrong-option {
+    background-color: var(--wrong-option-color) !important;
 }

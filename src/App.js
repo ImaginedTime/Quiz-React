@@ -16,7 +16,8 @@ function App() {
 	const [selectedTime, setSelectedTime] = useState(30);
 	
 	const [questions, setQuestions] = useState([]);
-	const [currentQuestion, setCurrentQuestion] = useState(0);
+	const [optionsForEachQuestion, setOptionsForEachQuestion] = useState([]); // [[1, 2, 3, 4, 5], [1, 2, 3, 4, 5]]
+	const [currentQuestion, setCurrentQuestion] = useState(null);
 	const [selectedOptions, setSelectedOptions] = useState([]); // [1, 2, 3, 4, 5]
 	
 	const [score, setScore] = useState(0);
@@ -24,7 +25,7 @@ function App() {
 
 
 	return (
-		<QuizContext.Provider value={{ selectedCategory, setSelectedCategory, selectedDifficulty, setSelectedDifficulty, selectedNumberOfQuestions, setSelectedNumberOfQuestions, selectedTime, setSelectedTime, questions, setQuestions, currentQuestion, setCurrentQuestion, selectedOptions, setSelectedOptions, score, setScore, showScore, setShowScore}}>
+		<QuizContext.Provider value={{ selectedCategory, setSelectedCategory, selectedDifficulty, setSelectedDifficulty, selectedNumberOfQuestions, setSelectedNumberOfQuestions, selectedTime, setSelectedTime, questions, setQuestions, optionsForEachQuestion, setOptionsForEachQuestion, currentQuestion, setCurrentQuestion, selectedOptions, setSelectedOptions, score, setScore, showScore, setShowScore}}>
 			<div className="App">
 				<BrowserRouter>
 					<Routes>

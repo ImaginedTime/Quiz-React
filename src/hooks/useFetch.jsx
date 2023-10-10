@@ -1,6 +1,4 @@
-import { useEffect, useRef } from 'react';
-
-import { useContext } from 'react';
+import { useEffect, useRef, useContext } from 'react';
 
 import { QuizContext } from '../QuizContext';
 
@@ -15,6 +13,19 @@ const useFetch = () => {
 	const { selectedDifficulty } = useContext(QuizContext);
 	const { selectedNumberOfQuestions } = useContext(QuizContext);
 
+	const { optionsForEachQuestion, setOptionsForEachQuestion } = useContext(QuizContext);
+
+	const randomlyFillTheOptions = async (data) => {
+		let optionsArray = [];
+		for(let i = 0; i < data.results.length; i++)
+		{
+			let op = data.results[i].incorrect_answers.concat(data.results[i].correct_answer);
+			op.sort(() => Math.random() - 0.5);
+			optionsArray.push(op);
+		}
+		await setOptionsForEachQuestion(optionsArray);
+	}
+
 	const dataFetchedRef = useRef(false);
 
     const fetchData = async () => {
@@ -25,12 +36,15 @@ const useFetch = () => {
 
 			const response = await fetch(url);
 			const data = await response.json();
+
 			await setQuestions(data);
-			setCurrentQuestion(0);
+			await randomlyFillTheOptions(data);
+			await setCurrentQuestion(0);
 
 			console.log(data);
 
 		} catch (error) {
+			console.log(error.type);
 			window.location.href = '/';
 		}
 	};

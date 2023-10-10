@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useRef } from 'react'
 import { useState, useContext } from 'react';
 
 import { useNavigate } from 'react-router-dom';
@@ -11,21 +11,19 @@ import createToast from '../utils/createToast'
 // for encoding html entities like &quot; &amp; etc. to their respective characters like " & etc.
 import he from 'he';
 
-import { ToastContainer} from 'react-toastify';
+import { ToastContainer } from 'react-toastify';
 
 
 
 export default function QuestionCard({ question, options, selectedOptions, setSelectedOptions, currentQuestion }) {
 
 	const { questions, selectedTime, setCurrentQuestion } = useContext(QuizContext);
-
 	const { score, setScore } = useContext(QuizContext);
-
 	const [selectedOption, setSelectedOption] = useState(null);
-
-	const [ time, setTime ] = useState(selectedTime);
+	const [time, setTime] = useState(selectedTime);
 
 	const navigate = useNavigate();
+
 
 	const handleOptionClick = (option) => {
 		if (selectedOption === option) {
@@ -45,22 +43,21 @@ export default function QuestionCard({ question, options, selectedOptions, setSe
 	const HandleSubmitButtonClick = () => {
 		console.log(selectedOptions);
 
-		if (currentQuestion === questions.results.length - 1) {
-			navigate('/score');
-			return;
-		}
-
 		if (selectedOptions[currentQuestion] === undefined || selectedOptions[currentQuestion] === null) {
 			createToast('Please Choose An Option!');
 			return;
 		}
-
 		if (selectedOptions[currentQuestion] === questions.results[currentQuestion].correct_answer) {
 			console.log("Correct Answer", questions.results[currentQuestion].correct_answer);
 			setScore(score + 1);
 		}
 		else {
 			console.log("Wrong Answer", questions.results[currentQuestion].correct_answer);
+		}
+		
+		if (currentQuestion === questions.results.length - 1) {
+			navigate('/score');
+			return;
 		}
 
 		setCurrentQuestion(currentQuestion + 1);
@@ -79,7 +76,7 @@ export default function QuestionCard({ question, options, selectedOptions, setSe
 		else {
 			console.log("Wrong Answer", questions.results[currentQuestion].correct_answer);
 		}
-		
+
 		setCurrentQuestion(currentQuestion + 1);
 		setTime(selectedTime);
 	}
@@ -100,7 +97,7 @@ export default function QuestionCard({ question, options, selectedOptions, setSe
 	return (
 		<div className="question-card">
 			<div className="timer-container">
-				<p className={`timer-text ${ time < selectedTime / 6 ? 'timer-lowest' : time < selectedTime / 3 ? 'timer-low' : 'timer-normal' }`}>
+				<p className={`timer-text ${time < selectedTime / 6 ? 'timer-lowest' : time < selectedTime / 3 ? 'timer-low' : 'timer-normal'}`}>
 					{time}
 				</p>
 			</div>
@@ -132,9 +129,7 @@ export default function QuestionCard({ question, options, selectedOptions, setSe
 			<div className="submit">
 				<button
 					className="submit-btn"
-					onClick={
-						HandleSubmitButtonClick
-					}
+					onClick={ HandleSubmitButtonClick }
 				>
 					Submit
 				</button>
