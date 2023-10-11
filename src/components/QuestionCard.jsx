@@ -1,6 +1,4 @@
-import React, { useEffect, useRef } from 'react'
-import { useState, useContext } from 'react';
-
+import React, { useEffect, useState, useContext } from 'react'
 import { useNavigate } from 'react-router-dom';
 
 import { QuizContext } from '../QuizContext';

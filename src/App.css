@@ -11,8 +11,8 @@
   --start-button-hover-color: #e5e5e5;
   --question-card-color: #202020;
   --question-card-qandf-color: #313131;
-  --correct-answer-color: #00FF00;
-  --wrong-answer-color: #FF0000;
+  --correct-option-color: rgb(100, 255, 100);
+  --wrong-option-color: rgb(255, 100, 100);
   
   --timer-background-color: #fca311;
   --timer-low-color: #fc6f11;

@@ -6,7 +6,6 @@ import '../styles/Question.css'
 
 
 import Loader from '../components/Loader';
-import createToast from '../utils/createToast'
 
 import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer} from 'react-toastify';

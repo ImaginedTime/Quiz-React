@@ -20,8 +20,8 @@ function ScoreCardItem({ question, options, selectedOption, correctOption }) {
 							<p
 								key={i}
 								className={`score-card-item-options-option
-											${selectedOption == correctOption ? 'correct-option' : 'wrong-option'} 
-											${option == correctOption ? 'correct-option' : 'wrong-option'}`}
+											${selectedOption == option && selectedOption != correctOption ? 'wrong-option' : ''} 
+											${option == correctOption ? 'correct-option' : ''}`}
 							>
 								{he.decode(option)}
 							</p>
@@ -60,7 +60,7 @@ export default function Score() {
 								)
 							})
 							:
-							window.location.href = '/question'
+							window.location.href = '/'
 					}
 				</div>
 			</div>
