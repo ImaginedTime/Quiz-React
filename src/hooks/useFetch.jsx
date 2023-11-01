@@ -31,8 +31,8 @@ const useFetch = () => {
     const fetchData = async () => {
 		try {
 
-			// const url = `https://opentdb.com/api.php?amount=${selectedNumberOfQuestions}&category=${selectedCategory.id}&difficulty=${selectedDifficulty}`;
-			const url = `https://opentdb.com/api.php?amount=3&category=9&difficulty=easy&type=multiple`;
+			const url = `https://opentdb.com/api.php?amount=${selectedNumberOfQuestions}&category=${selectedCategory.id}&difficulty=${selectedDifficulty}`;
+			// const url = `https://opentdb.com/api.php?amount=3&category=9&difficulty=easy&type=multiple`;
 
 			const response = await fetch(url);
 			const data = await response.json();
